@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            background-image: linear-gradient(#c49898,#487748);
+            align-items: center;
+            flex-direction: column;
+        }
+        .container h1{
+             color: wheat;
+            background-image: linear-gradient(red,green);
+        }
+        .container div{
+          
+            height: 60px;
+            width: 480px;
+            border-radius: 19px;
+            background-image: linear-gradient(#e6dcdc, #796c6c);
+            background-color: antiquewhite;
+         }
+        #insert{
+            text-align: center;
+            font-size: 57px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <h1>TIMER</h1>
+        <div id="insert">
+      
+        </div>
+        
+    </div>
+ 
+</body>
+ <script>
+let start = setInterval(function(){
+    let today = new Date();
+    let target = new Date("22 june 2023")
+            
+    var day = (target.getTime()-today.getTime() );
+    let days = Math.floor(day/(60*60*24*1000));
+   
+    let hours = Math.floor((day%(60*60*24*1000))/(60*60*1000));
+    let minutes =Math.floor((day%(60*60*24*1000))%(60*60*1000)/(60*1000))
+    let second = Math.floor(((day%(60*60*24*1000))%(60*60*1000))%(60*1000)/(1000))
+    console.log(days);
+    console.log(hours);
+    console.log(minutes);
+    console.log(second);
+ 
+    let a = document.getElementById("insert");
+    a.innerHTML =   days+"d "+hours+"hr "+ minutes+"m "+second+"s "
+    },50)
+</script>
+</html>
